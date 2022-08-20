@@ -53,7 +53,9 @@ public class HomeController {
     @RequestMapping("/two")
     public String joinFind(){
 
-        List<Department> st= departmentRepo.findAll();
+//        departmentRepo.findAll();
+        List<Department> st=departmentRepo.getData("MCA");
+        System.out.println(st.get(0).getStudents().get(0).getName());
         System.out.println(st);
         return "<h1>join data page</h1>";
     }
